@@ -1,0 +1,185 @@
+:root {
+  --main-color: #f44336;
+  --section-margins: 120px;
+}
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(../eduford_img/background.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.header-nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 300px;
+}
+.nav-logo {
+  width: 150px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.nav-links li:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.nav-links li:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.nav-links li:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.nav-links li:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.nav-links li:nth-child(5) {
+  transition-delay: 0.25s;
+}
+.nav-links li:nth-child(6) {
+  transition-delay: 0.3s;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links li::after {
+  content: " ";
+  width: 0%;
+  height: 2px;
+  background-color: var(--main-color);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  margin: 0 auto;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-animate {
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-in;
+}
+.show-animate {
+  transform: translateY(0);
+  opacity: 100%;
+}
+
+.text-box h1 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.about-description {
+  width: 80%;
+  margin: 100px auto;
+  display: flex;
+  flex-basis: 44%;
+}
+
+.about-description img {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  flex-basis: 45%;
+}
+
+.about-description div {
+  flex-basis: 55%;
+  padding-right: 50px;
+}
+
+.description-text h2 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.description-text p {
+  font-size: 14px;
+  color: #777;
+  font-weight: 300;
+  margin-bottom: 35px;
+}
+
+.hero-btn {
+  color: var(--main-color);
+  text-decoration: none;
+  border: 1px solid var(--main-color);
+  padding: 12px 34px;
+  position: relative;
+  cursor: pointer;
+  transition: 1s;
+  transition-delay: 0.1s;
+}
+
+.hero-btn:hover {
+  border: 1px solid var(--main-color);
+  background-color: var(--main-color);
+  color: #fff;
+}
+.hero-btn::before {
+  content: " ";
+  background-color: var(--main-color);
+  width: 16%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: -8%;
+  transition: 1s;
+}
+
+.hero-btn::after {
+  content: " ";
+  background-color: var(--main-color);
+  width: 16%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 92%;
+  transition: 1s;
+}

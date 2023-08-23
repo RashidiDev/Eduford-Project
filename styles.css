@@ -1,0 +1,471 @@
+:root {
+  --main-color: #f44336;
+  --section-margins: 120px;
+}
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(eduford_img/banner.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.header-nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 300px;
+}
+.nav-logo {
+  width: 150px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.nav-links li:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.nav-links li:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.nav-links li:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.nav-links li:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.nav-links li:nth-child(5) {
+  transition-delay: 0.25s;
+}
+.nav-links li:nth-child(6) {
+  transition-delay: 0.3s;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links li::after {
+  content: " ";
+  width: 0%;
+  height: 2px;
+  background-color: var(--main-color);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  margin: 0 auto;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-animate {
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-in;
+}
+.show-animate {
+  transform: translateY(0);
+  opacity: 100%;
+}
+
+.text-box h1 {
+  font-size: 62px;
+  margin-bottom: 25px;
+}
+
+.text-box p {
+  margin: 10px 0 40px;
+  font-size: 14px;
+  transition-delay: 0.1s;
+}
+
+.hero-btn {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 12px 34px;
+  position: relative;
+  cursor: pointer;
+  transition: 1s;
+  transition-delay: 0.1s;
+}
+
+.hero-btn:hover {
+  border: 1px solid var(--main-color);
+  background-color: var(--main-color);
+}
+.hero-btn::before {
+  content: " ";
+  background-color: white;
+  width: 16%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: -8%;
+  transition: 1s;
+}
+
+.hero-btn::after {
+  content: " ";
+  background-color: white;
+  width: 16%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 92%;
+  transition: 1s;
+}
+
+.hero-btn:hover::before {
+  background-color: var(--main-color);
+}
+
+.hero-btn:hover::after {
+  background-color: var(--main-color);
+}
+
+@media (max-width: 700px) {
+  .text-box h1 {
+    font-size: 20px;
+  }
+
+  .nav-links li {
+    display: block;
+    padding: 10px;
+  }
+
+  .nav-links ul {
+    padding: 30px;
+  }
+  .nav-links {
+    position: absolute;
+    background-color: var(--main-color);
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: 0;
+    text-align: left;
+    z-index: 2;
+  }
+}
+
+.courses-sec {
+  text-align: center;
+  margin: auto;
+  margin-top: var(--section-margins);
+  width: 80%;
+}
+
+.courses-head {
+  margin-bottom: 70px;
+}
+
+.courses-head h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.courses-head p {
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+.courses-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.course {
+  flex-basis: 31%;
+  background-color: #fff3f3;
+  padding: 20px 12px;
+  border-radius: 10px;
+  transition: 0.5s;
+  cursor: default;
+}
+
+.course:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.course h3 {
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.course p {
+  font-size: 14px;
+  color: #777;
+}
+
+.campus {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  margin-top: var(--section-margins);
+}
+.campus-title h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.campus-title p {
+  font-size: 14px;
+  color: #777;
+}
+
+.campus-gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  position: relative;
+}
+
+.campus-image {
+  flex-basis: 32%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.campus-image img {
+  width: 100%;
+  display: block;
+}
+
+.hover-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(226, 0, 0, 0.7);
+  opacity: 0;
+  transition: 0.5s;
+}
+.hover-image:hover {
+  opacity: 1;
+}
+
+.hover-image h3 {
+  width: 100%;
+  color: #fff;
+  font-weight: 500;
+  font-size: 26px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  transition: 0.3s;
+}
+
+.hover-image:hover h3 {
+  bottom: 42%;
+}
+
+.facilities {
+  width: 80%;
+  margin: auto;
+  margin-top: var(--section-margins);
+}
+
+.facilities-title {
+  text-align: center;
+}
+
+.facilities-title h1 {
+  font-weight: 600;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.facilities-title p {
+  color: #777;
+  font-size: 14px;
+}
+
+.facilities-gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.facility-image {
+  flex-basis: 31%;
+  overflow: hidden;
+}
+
+.facility-image img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.facility-image p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  color: #777;
+  margin: 0;
+}
+
+.facility-image h3 {
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.students {
+  margin: auto;
+  margin-top: var(--section-margins);
+  text-align: center;
+  width: 80%;
+}
+
+.students-title h1 {
+  font-weight: 600;
+  font-size: 36px;
+  margin: 15px 0;
+}
+
+.students-title p {
+  font-size: 14px;
+  color: #777;
+  font-weight: 300;
+}
+
+.students-comments {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+.student-comment-wrapper {
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+  background-color: #fff3f3;
+  text-align: left;
+  flex-basis: 48%;
+}
+
+.student-comment-wrapper img {
+  height: 40px;
+  margin-left: 5px;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+
+.comment p {
+  padding: 0;
+  margin: 0;
+  color: #777;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.comment h3 {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.call-to-action {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(eduford_img/banner2.jpg);
+  margin: 170px auto;
+  width: 80%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.cta-container {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.cta-container h1 {
+  color: #fff;
+  margin: 0;
+  margin-bottom: 60px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.cta-container a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.about-us {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-us h4 {
+  font-weight: 600;
+}
+
+.about-us p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #777;
+}
+
+.Socials {
+  margin-top: 30px;
+}
+
+.Socials i {
+  color: var(--main-color);
+  margin: 0 15px;
+  padding: 5px;
+  cursor: pointer;
+}
