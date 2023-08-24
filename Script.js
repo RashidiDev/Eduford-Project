@@ -1,14 +1,13 @@
-let headerMain = document.querySelectorAll('.header-animate')
-console.log(headerMain);
+let headerMain = document.querySelectorAll(".header-animate");
 
 // window.onscroll = () => {
 // }
 
 window.onload = () => {
-    headerMain.forEach(element => {
-        element.classList.add('show-animate')
-    })
-}
+  headerMain.forEach((element) => {
+    element.classList.add("show-animate");
+  });
+};
 // let top = window.scrollY
 //         console.log(top);
 //         let offset = element.offsetTop

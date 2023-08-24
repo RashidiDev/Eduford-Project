@@ -1,0 +1,195 @@
+:root {
+  --main-color: #f44336;
+  --section-margins: 120px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(../eduford_img/background.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.header-nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 300px;
+}
+.nav-logo {
+  width: 150px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.nav-links li:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.nav-links li:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.nav-links li:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.nav-links li:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.nav-links li:nth-child(5) {
+  transition-delay: 0.25s;
+}
+.nav-links li:nth-child(6) {
+  transition-delay: 0.3s;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links li::after {
+  content: " ";
+  width: 0%;
+  height: 2px;
+  background-color: var(--main-color);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  margin: 0 auto;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-animate {
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-in;
+}
+.show-animate {
+  transform: translateY(0);
+  opacity: 100%;
+}
+
+.text-box h1 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.courses-sec {
+  text-align: center;
+  margin: auto;
+  margin-top: var(--section-margins);
+  width: 80%;
+  margin-bottom: var(--section-margins);
+}
+
+.courses-head {
+  margin-bottom: 70px;
+}
+
+.courses-head h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.courses-head p {
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+.courses-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.course {
+  flex-basis: 31%;
+  background-color: #fff3f3;
+  padding: 20px 12px;
+  border-radius: 10px;
+  transition: 0.5s;
+  cursor: default;
+}
+
+.course:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.course h3 {
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.course p {
+  font-size: 14px;
+  color: #777;
+}
+
+.about-us {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-us h4 {
+  font-weight: 600;
+}
+
+.about-us p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #777;
+}
+
+.Socials {
+  margin-top: 30px;
+}
+
+.Socials i {
+  color: var(--main-color);
+  margin: 0 15px;
+  padding: 5px;
+  cursor: pointer;
+}
