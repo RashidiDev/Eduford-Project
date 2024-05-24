@@ -4,7 +4,9 @@
 }
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
+
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -13,8 +15,7 @@ body {
 header {
   height: 50vh;
   width: 100%;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url(../eduford_img/background.jpg);
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../eduford_img/background.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -22,13 +23,38 @@ header {
 
 .header-nav {
   display: flex;
-  padding: 2% 6%;
+  padding: 25px 6%;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 300px;
 }
+
 .nav-logo {
   width: 150px;
+}
+
+.nav-btn {
+  cursor: pointer;
+  display: none;
+}
+
+.nav-close {
+  padding: 20px;
+  display: none;
+  justify-content: flex-end;
+}
+
+.nav-menu {
+  display: block;
+}
+
+.nav-btn svg {
+  width: 35px;
+  height: 35px;
+  fill: white;
+  text-align: right;
+  padding: 5px;
+  border-radius: 50%;
 }
 
 ul {
@@ -66,6 +92,8 @@ ul {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
+  display: block;
+  width: 100%;
 }
 
 .nav-links li::after {
@@ -78,9 +106,6 @@ ul {
   transition: 0.5s;
 }
 
-.nav-links li:hover::after {
-  width: 100%;
-}
 .text-box {
   position: absolute;
   top: 50%;
@@ -116,15 +141,13 @@ ul {
   width: 80%;
   display: flex;
   justify-content: space-between;
+  gap: 25px;
   margin: auto;
   margin-top: var(--section-margins);
 }
 
 .blog-main img {
-  overflow: hidden;
-  height: 100%;
-  flex-basis: 65%;
-  background-size: cover;
+  width: 100%;
 }
 
 table th {
@@ -193,7 +216,7 @@ textarea {
   position: relative;
 }
 
-.input-box span {
+.input-box label {
   position: absolute;
   top: 0;
   left: 0;
@@ -202,8 +225,8 @@ textarea {
   color: #757575;
   transition: 0.2s ease-out;
 }
-.input-box input:focus ~ span,
-textarea:focus ~ span {
+.input-box input:focus ~ label,
+textarea:focus ~ label {
   transform: translate(-10px, -27px);
   color: #616161;
   font-size: 13px;
@@ -216,17 +239,10 @@ textarea:focus ~ span {
   padding: 12px 34px;
   position: relative;
   cursor: pointer;
-  transition: 1s;
-  transition-delay: 0.1s;
   margin: 0 0 20px 20px;
   background-color: #fff;
 }
 
-.input-btn:hover {
-  border: 1px solid var(--main-color);
-  background-color: var(--main-color);
-  color: #fff;
-}
 .input-btn::before {
   content: " ";
   background-color: var(--main-color);
@@ -235,7 +251,6 @@ textarea:focus ~ span {
   position: absolute;
   top: 50%;
   left: -8%;
-  transition: 1s;
 }
 
 .input-btn::after {
@@ -246,7 +261,6 @@ textarea:focus ~ span {
   position: absolute;
   top: 50%;
   left: 92%;
-  transition: 1s;
 }
 .about-us {
   width: 80%;
@@ -274,4 +288,125 @@ textarea:focus ~ span {
   margin: 0 15px;
   padding: 5px;
   cursor: pointer;
+}
+
+@media (hover: hover) {
+  .nav-links li:hover::after {
+    width: 100%;
+  }
+
+  .input-btn {
+    transition: 1s;
+    transition-delay: 0.1s;
+  }
+
+  .input-btn:hover {
+    color: white;
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+  }
+
+  .input-btn::before,
+  .input-btn::after {
+    transition: 1s;
+  }
+
+  .input-btn:hover::before {
+    background-color: var(--main-color);
+  }
+
+  .input-btn:hover::after {
+    background-color: var(--main-color);
+  }
+}
+
+@media (hover: none) {
+  .nav-links li:active {
+    background-color: hsl(4, 80%, 50%);
+  }
+
+  .input-btn:active {
+    color: white;
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+  }
+
+  .input-btn:active::before {
+    background-color: var(--main-color);
+  }
+
+  .input-btn:active::after {
+    background-color: var(--main-color);
+  }
+
+  .nav-btn svg:active {
+    background-color: hsl(4, 80%, 50%);
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    height: 40vh;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .text-box h1 {
+    font-size: 34px;
+  }
+
+  .nav-links li {
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .nav-btn {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    background-color: var(--main-color);
+    height: 100%;
+    width: 200px;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    text-align: left;
+    z-index: 2;
+    transition: transform 300ms ease-in-out;
+  }
+  .nav-menu-show {
+    transform: translateX(0);
+  }
+
+  .nav-links li::after {
+    background-color: white;
+  }
+
+  .blog-main,
+  .blog-description,
+  .about-us {
+    width: 85%;
+  }
+
+  /* .blog-main {
+    flex-direction: column;
+  } */
+
+  .categories-table {
+    display: none;
+  }
+
+  .blog-description p {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .comments {
+    width: 100%;
+  }
 }

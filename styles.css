@@ -5,17 +5,24 @@
 * {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
+
 body {
   margin: 0;
   padding: 0;
 }
 
+.container {
+  width: 80%;
+  margin-inline: auto;
+}
+
 header {
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url(eduford_img/banner.png);
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(eduford_img/banner.png);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -23,13 +30,37 @@ header {
 
 .header-nav {
   display: flex;
-  padding: 2% 6%;
+  padding: 25px 6%;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 300px;
 }
 .nav-logo {
   width: 150px;
+}
+
+.nav-btn {
+  cursor: pointer;
+  display: none;
+}
+
+.nav-close {
+  padding: 20px;
+  display: none;
+  justify-content: flex-end;
+}
+
+.nav-menu {
+  display: block;
+}
+
+.nav-btn svg {
+  width: 35px;
+  height: 35px;
+  fill: white;
+  text-align: right;
+  padding: 5px;
+  border-radius: 50%;
 }
 
 ul {
@@ -67,6 +98,8 @@ ul {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
+  display: block;
+  width: 100%;
 }
 
 .nav-links li::after {
@@ -77,10 +110,6 @@ ul {
   display: block;
   margin: auto;
   transition: 0.5s;
-}
-
-.nav-links li:hover::after {
-  width: 100%;
 }
 
 .text-box {
@@ -117,6 +146,7 @@ ul {
   margin: 10px 0 40px;
   font-size: 14px;
   transition-delay: 0.1s;
+  width: 45%;
 }
 
 .hero-btn {
@@ -126,14 +156,8 @@ ul {
   padding: 12px 34px;
   position: relative;
   cursor: pointer;
-  transition: 1s;
-  transition-delay: 0.1s;
 }
 
-.hero-btn:hover {
-  border: 1px solid var(--main-color);
-  background-color: var(--main-color);
-}
 .hero-btn::before {
   content: " ";
   background-color: white;
@@ -142,7 +166,6 @@ ul {
   position: absolute;
   top: 50%;
   left: -8%;
-  transition: 1s;
 }
 
 .hero-btn::after {
@@ -153,47 +176,12 @@ ul {
   position: absolute;
   top: 50%;
   left: 92%;
-  transition: 1s;
-}
-
-.hero-btn:hover::before {
-  background-color: var(--main-color);
-}
-
-.hero-btn:hover::after {
-  background-color: var(--main-color);
-}
-
-@media (max-width: 700px) {
-  .text-box h1 {
-    font-size: 20px;
-  }
-
-  .nav-links li {
-    display: block;
-    padding: 10px;
-  }
-
-  .nav-links ul {
-    padding: 30px;
-  }
-  .nav-links {
-    position: absolute;
-    background-color: var(--main-color);
-    height: 100vh;
-    width: 200px;
-    top: 0;
-    right: 0;
-    text-align: left;
-    z-index: 2;
-  }
 }
 
 .courses-sec {
   text-align: center;
   margin: auto;
   margin-top: var(--section-margins);
-  width: 80%;
 }
 
 .courses-head {
@@ -228,10 +216,6 @@ ul {
   cursor: default;
 }
 
-.course:hover {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-}
-
 .course h3 {
   font-weight: 600;
   margin: 10px 0;
@@ -243,7 +227,6 @@ ul {
 }
 
 .campus {
-  width: 80%;
   text-align: center;
   margin: auto;
   margin-top: var(--section-margins);
@@ -288,9 +271,6 @@ ul {
   opacity: 0;
   transition: 0.5s;
 }
-.hover-image:hover {
-  opacity: 1;
-}
 
 .hover-image h3 {
   width: 100%;
@@ -304,12 +284,7 @@ ul {
   transition: 0.3s;
 }
 
-.hover-image:hover h3 {
-  bottom: 42%;
-}
-
 .facilities {
-  width: 80%;
   margin: auto;
   margin-top: var(--section-margins);
 }
@@ -363,7 +338,6 @@ ul {
   margin: auto;
   margin-top: var(--section-margins);
   text-align: center;
-  width: 80%;
 }
 
 .students-title h1 {
@@ -414,10 +388,8 @@ ul {
 }
 
 .call-to-action {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(eduford_img/banner2.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(eduford_img/banner2.jpg);
   margin: 170px auto;
-  width: 80%;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -425,7 +397,7 @@ ul {
 }
 .cta-container {
   text-align: center;
-  padding: 100px 0;
+  padding: 100px 20px;
 }
 
 .cta-container h1 {
@@ -434,6 +406,8 @@ ul {
   margin-bottom: 60px;
   font-size: 30px;
   font-weight: 600;
+  width: 55%;
+  margin-inline: auto;
 }
 
 .cta-container a {
@@ -443,7 +417,6 @@ ul {
 }
 
 .about-us {
-  width: 80%;
   margin: auto;
   text-align: center;
   margin-bottom: 50px;
@@ -468,4 +441,161 @@ ul {
   margin: 0 15px;
   padding: 5px;
   cursor: pointer;
+}
+
+@media (hover: hover) {
+  .nav-links li:hover::after {
+    width: 100%;
+  }
+
+  .hero-btn {
+    transition: 1s;
+    transition-delay: 0.1s;
+  }
+
+  .hero-btn:hover {
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+  }
+
+  .hero-btn::before,
+  .hero-btn::after {
+    transition: 1s;
+  }
+
+  .hero-btn:hover::before {
+    background-color: var(--main-color);
+  }
+
+  .hero-btn:hover::after {
+    background-color: var(--main-color);
+  }
+  .course:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  }
+  .hover-image:hover {
+    opacity: 1;
+  }
+  .hover-image:hover h3 {
+    bottom: 42%;
+  }
+}
+
+@media (hover: none) {
+  .nav-links li:active {
+    background-color: hsl(4, 80%, 50%);
+  }
+
+  .hero-btn:active {
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+  }
+
+  .hero-btn:active::before {
+    background-color: var(--main-color);
+  }
+
+  .hero-btn:active::after {
+    background-color: var(--main-color);
+  }
+
+  .nav-btn svg:active {
+    background-color: hsl(4, 80%, 50%);
+  }
+
+  .hover-image {
+    opacity: 1;
+  }
+  .hover-image h3 {
+    bottom: 42%;
+  }
+}
+
+/*! MOBILE DESIGN */
+
+@media (max-width: 600px) {
+  .container {
+    width: 85%;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  .text-box h1 {
+    font-size: 34px;
+  }
+
+  .text-box p {
+    font-size: 16px;
+    width: initial;
+  }
+  .nav-links li {
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .nav-btn {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    background-color: var(--main-color);
+    height: 100%;
+    width: 200px;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    text-align: left;
+    z-index: 2;
+    transition: transform 300ms ease-in-out;
+  }
+  .nav-menu-show {
+    transform: translateX(0);
+  }
+
+  .nav-links li::after {
+    background-color: white;
+  }
+
+  .courses-head p {
+    font-size: 16px;
+  }
+
+  .courses-box {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .campus-gallery {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .students-comments {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .comment h3 {
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+
+  .facilities-gallery {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .facility-image h3 {
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .call-to-action {
+    margin: 140px 0;
+  }
+  .cta-container h1 {
+    font-size: 26px;
+    width: initial;
+  }
 }
